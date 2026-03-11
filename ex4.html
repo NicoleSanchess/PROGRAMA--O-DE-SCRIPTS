@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO AULA 04</title>
+</head>
+<body>
+    <script type = "text/javascript">
+    let n1 = parseFloat(prompt("Informe o primeiro número:"));
+    let n2 = parseFloat(prompt("Informe o segundo número: "));
+    let op = prompt("Informe a operação desejada: \n + para adição \n - para subtração \n * para multiplicação \n / para divisão")
+    op = op.toLowerCase()
+    if (isNaN(n1) || isNaN (n2)){             
+        document.write("Informe apenas números!")
+    }else{
+        switch (op){
+            case "+":
+                let ad = n1 + n2
+                document.write(`O resultado da sua adição é ${ad}`)
+                break
+            case "-":
+                let sub = n1 - n2
+                document.write(`O resultado da sua subtração é ${sub} `)
+                break
+            case "*":
+                let mul = n1 * n2
+                document.write(`O resultado da sua multiplicação é ${mul}`)
+                break
+            case "/":
+                if (n2 == 0){
+                    document.write("Nenhum número é diuvisível por 0")
+                }else{
+                    let div = n1 / n2
+                    document.write(`O resultado da sua divisão é ${div}`)
+                }
+                 break
+            default:
+            document.write(`${op} não identificada!`)
+        }
+
+    }
+
+
+    </script>
+</body>
+</html>

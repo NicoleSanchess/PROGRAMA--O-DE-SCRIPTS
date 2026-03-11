@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+</head>
+<body>
+    <script type="text/javascript">
+    let n1 = parseFloat(prompt("Informe a primeira nota:"));
+    let n2 = parseFloat(prompt("Informe a segunda nota: "));
+
+    if (isNaN(n1) || isNaN (n2)){             // é não numero
+        document.write("Informe apenas números!")
+    }else {
+        let media = (n1 + n2) /2;
+        document.write(`A média das notas informadas é ${media}.`) // Crase
+    }
+    // alert("A média das notas informadas é: "+media)
+    document.write("<br>")
+    let cidade = prompt("Informe uma cidade: ");
+
+    cidade = cidade.toLocaleUpperCase()
+
+    if (cidade == "TAQUARITINGA"){
+        document.write(`${cidade} é conhecida pelo seu Carnaval. `)
+    }else if (cidade == "MONTE ALTO"){
+        document.write(`${cidade} é conhecida pelo Museu.`)
+    }else if (cidade == "MATAO"){
+        document.write(`${cidade} é conhecida por suas industrias.`)
+    }else if(cidade == "DOBRADA" || cidade == "GUARIROBA"){
+        document.write(`${cidade} é conhecida por suas festas.`)
+
+    }else{
+        document.write(`${cidade} não identificada!`)
+    }
+    document.write("<br>")
+    switch (cidade){
+        case "TAQUARITINGA":
+            document.write(`${cidade} é conhecida pelo Carnaval.`)
+            break
+        case "MONTE ALTO":
+            document.write(`${cidade} é conhecida pelo Museu.`)
+            break
+        case "MATAO":
+        case "MATÂO":
+            document.write(`${cidade} é conhecida por suas industrias.`)
+            break
+        case "DOBRADA":
+        case "GUARIROBA":
+            document.write(`${cidade} é conhecida por suas festas.`)
+            break
+        default:
+            document.write(`${cidade} não identificada!`)
+    }
+    document.write("<br>")
+    document.write((cidade == "TAQUARITINGA" || cidade == "MATAO")? "Possui Fatec": "Possui outra intituição.")
+    </script>
+</body>
+</html>
