@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora 2000</title>
+</head>
+<body>
+    <script type = 'text/javascript'>
+        let n1 = parseFloat(prompt('informe o primeiro numero:'))
+        let n2 = parseFloat(prompt('informe o segundo numero:'))
+        let op = prompt('Qual a operação realizada?\nOpções: Divisão, Multiplicação, Soma, Subtração.')
+        let answer = 'sim'
+        
+        op = op.toLowerCase()
+        while (answer == 'sim'){
+            if (isNaN(n1) || isNaN(n2) ) {
+                document.write('Informe apenas numeros!')
+            } else {
+                switch (op) {
+                    case 'divisão':
+                        if (n2 == 0) {
+                            document.write('Impossivel dividir por zero')
+                        }else {
+                            result = n1 / n2
+                            document.write(`O resultado é: ${result}`)
+                        }
+                        break
+                    case 'multiplicação':
+                        result = n1 * n2
+                        document.write(`O resultado é: ${result}`)
+                        break
+                    case 'soma':
+                        result = n1 + n2
+                        document.write(`O resultado é: ${result}`)
+                        break
+                    case 'subtração':
+                        result = n1 - n2
+                        document.write(`O resultado é: ${result}`)
+                        break
+                    default:
+                        document.write(`Você não digitou uma operação ou escreveu errado, foi escrito "${op}"`)
+                }
+            }
+            answer = prompt('Deseja fazer a operação novamente?')
+            answer = answer.toLowerCase()
+        }
+    </script>
+</body>
+</html>
