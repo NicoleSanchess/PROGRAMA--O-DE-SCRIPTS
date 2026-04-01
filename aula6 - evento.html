@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula - Função</title>
+    <script type="text/javascript">
+        function converterRealParaDolar(valor,dolar){
+            return  'U$$' + ' ' +(valor / dolar).toFixed(2).replace('.',',') +'<br>'
+        }
+
+        window.onload = function(){
+            document.getElementById('btnConverter').onclick = function (){
+                let dolar = document.getElementById('dolar').value
+                let valor = document.getElementById('valor').value
+                let resultado = converterRealParaDolar(valor, dolar)
+                document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado
+            }
+        }
+        function Tipo(valor, dolar){
+            let tipo = document.getElementById('tipo').value
+            if (tipo == "1"){
+                return 'U$$' + (valor / dolar).toFixed(2)
+            }else if(tipo == '2'){
+                return 'U$$' + (valor * dolar).toFixed(2)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Conversão Real / Dólar</h1>
+    <b>Dólar:</b><input type ="number" id = "dolar" value="5.19">
+    <br> <br>
+    <b>Valor:</b><input type ="number" id="valor">
+    <br><br>
+    <!-- <button onclick="alert('ok')">CONVERTER</button> -->
+     <select id="tipo">
+        <option value="1">Real para Dólar</option>
+        <option value="2">Dólar para Real</option>
+     </select>
+     <button id="btnConverter">CONVERTER</button>
+    <p><b id="resultado">Resultado: </b></p>
+</body>
+</html>
